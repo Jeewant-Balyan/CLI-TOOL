@@ -193,7 +193,7 @@ CLI-TOOL/
 ## 📸 Media (Screenshots & Video Demo)  
 
 **Video Demo:**  
-[[Demo Video  ](https://drive.google.com/drive/folders/1x61wwTsRZVPTXpE3OvP0T2mFO2N3VHyF)](https://drive.google.com/drive/folders/1x61wwTsRZVPTXpE3OvP0T2mFO2N3VHyF?q=sharedwith:public%20parent:1x61wwTsRZVPTXpE3OvP0T2mFO2N3VHyF)
+https://drive.google.com/drive/folders/1x61wwTsRZVPTXpE3OvP0T2mFO2N3VHyF?q=sharedwith:public%20parent:1x61wwTsRZVPTXpE3OvP0T2mFO2N3VHyF
 
 **Screenshots:**  
 ![WhatsApp Image 2025-09-29 at 22 51 14_98cf30f0](https://github.com/user-attachments/assets/6e36bc5d-e546-415e-8593-0723d6f87f69)
