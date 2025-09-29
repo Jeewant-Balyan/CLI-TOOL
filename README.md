@@ -1,159 +1,147 @@
-# DBCLI – QuickDB & Database Utility CLI Tool
+# DBMASTER – QuickDB & Database Utility CLI Tool  
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Jeewant-Balyan/CLI-TOOL)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Jeewant-Balyan/CLI-TOOL)  
 
-DBCLI is a **Command Line Interface tool** designed for students, startups, and hackathons to **quickly create, visualize, seed, and export databases**. It supports **QuickDB in-memory SQLite**, random data generation, ER diagram visualization, multi-format exports, and a mini dashboard for easy demos.
-
----
-
-## 🌟 Features
-
-* **QuickDB**: Launch an in-memory SQLite database for instant testing or demos.
-* **Quick Seed**: Generate fake users, orders, or any sample data automatically.
-* **DB Stats & Summary**: View row counts, null percentages, and column data types.
-* **Interactive/Colored ER Diagrams**: Generate schema diagrams highlighting relationships and table types.
-* **Multi-Format Export**: Export tables as CSV, JSON, Excel, or a combined ZIP.
-* **Mini Dashboard**: Combine stats, ER diagram, and exports in one CLI view.
-* **Quick Template DBs**: Pre-built templates like E-commerce, School, or Library.
+DBMASTER is a **Command Line Interface tool** designed for students, startups, and hackathons to **quickly create, visualize, seed, and export databases**. It supports **QuickDB in-memory SQLite**, random data generation, ER diagram visualization, multi-format exports, and a mini dashboard for easy demos.  
 
 ---
 
-## 🛠️ Setup in GitHub Codespaces
+## 🌟 Features  
 
-### 1. Open in Codespaces
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Jeewant-Balyan/CLI-TOOL)
+* **QuickDB**: Launch an in-memory SQLite database for instant testing or demos.  
+* **Quick Seed**: Generate fake users, orders, or any sample data automatically.  
+* **DB Stats & Summary**: View row counts, null percentages, and column data types.  
+* **Interactive/Colored ER Diagrams**: Generate schema diagrams highlighting relationships and table types.  
+* **Multi-Format Export**: Export tables as CSV, JSON, Excel, or a combined ZIP.  
+* **Mini Dashboard**: Combine stats, ER diagram, and exports in one CLI view.  
+* **Quick Template DBs**: Pre-built templates like E-commerce, School, or Library.  
 
-Click the badge above to launch your project in **GitHub Codespaces**.
+---
 
-### 2. Install Dependencies
+## 🛠️ Setup in GitHub Codespaces  
 
-Inside the Codespaces terminal, run:
+### 1. Open in Codespaces  
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Jeewant-Balyan/CLI-TOOL)  
+
+Click the badge above to launch your project in **GitHub Codespaces**.  
+
+### 2. Update & Install Dependencies  
+
+Run these inside Codespaces terminal:  
 
 ```bash
-sudo apt update && sudo apt install -y sqlite3 graphviz
-```
+# Update packages
+sudo apt update && sudo apt upgrade -y  
 
-### 3. Build the CLI Tool
+# Install Go, SQLite, and Graphviz
+sudo apt install -y golang-go sqlite3 graphviz unzip git build-essential  
+
+# Optional: Install Excel export dependency
+go install github.com/xuri/excelize/v2@latest  
+```  
+
+### 3. Build the CLI Tool  
 
 ```bash
 # Fix the permission issue
-chmod +x dbcli
+chmod +x dbmaster  
 
 # Build the Go project
-go build -o dbcli main.go
-```
+go build -o dbmaster main.go  
+```  
 
 ---
 
-## ⚡ Usage Guide
+## ⚡ Usage Guide  
 
-### 1. QuickDB – Launch in-memory database
+### 1. QuickDB – Launch in-memory database  
 
 ```bash
-./dbcli quickdb
+./dbmaster quickdb
 ```
 
-**Output:**
+**This will:**  
+- Spin up an in-memory SQLite DB.  
+- Auto-create tables (users, orders).  
+- Seed with random sample data.  
+- Let you run stats, ER diagram, exports, etc.  
+
+**Output:**  
 
 ```
 QuickDB in-memory SQLite running.
 Press Enter to stop QuickDB...
-```
+```  
 
-### 2. Generate ER Diagram
+---
+
+### 2. Generate ER Diagram  
 
 ```bash
-./dbcli visualize
+./dbmaster visualize
 ```
-
-**Output:**
 
 ```
 ER diagram generated as schema.png
-```
+```  
 
-### 3. Export Table Data
+---
 
-**CSV:**
+### 3. Export Table Data  
 
+**CSV:**  
 ```bash
-./dbcli export users csv users.csv
+./dbmaster export users csv users.csv
 ```
-
-**Output:**
-
 ```
 Exported users as csv to users.csv
-```
+```  
 
-**JSON:**
-
+**JSON:**  
 ```bash
-./dbcli export users json users.json
+./dbmaster export users json users.json
 ```
-
-**Output:**
-
 ```
 Exported users as json to users.json
-```
+```  
 
-**Excel:**
+**Excel:**  
+```bash
+./dbmaster export users excel users.xlsx
+```
+```
+Usage: dbmaster export <table> <format> <outfile>
+```  
+
+---
+
+### 4. Mini Dashboard  
 
 ```bash
-./dbcli export users excel users.xlsx
+./dbmaster dashboard
 ```
 
-**Output:**
+Outputs table stats, ER diagram, and export package ZIP.  
 
-```
-Usage: dbcli export <table> <format> <outfile>
-```
+---
 
-### 4. Mini Dashboard
-
-```bash
-./dbcli dashboard
-```
-
-**Sample Output:**
-
-```
-=== Mini DB Dashboard ===
-Table: products, Rows: 0
-  Col: id (INTEGER), Nulls: 0
-  Col: name (TEXT), Nulls: 0
-  Col: price (INTEGER), Nulls: 0
-...
-ER Diagram will be generated as schema.png
-ER diagram generated as schema.png
-Exporting combined ZIP of diagram + CSV...
-Exported products as csv to tmp_export/products.csv
-...
-Combined export package created as export_package.zip
-Dashboard demo complete.
-```
-
-### 5. Verify Template SQL File
+### 5. Verify Template SQL File  
 
 ```bash
 ls -R | grep template_ecom.sql
 ```
-
-**Output:**
-
 ```
 template_ecom.sql
-```
+```  
 
 ---
 
-## 🗂️ Project Structure
+## 🗂️ Project Structure  
 
 ```
 CLI-TOOL/
 │── main.go
-│── dbcli (built binary)
+│── dbmaster (built binary)
 │── template_ecom.sql
 │── template_school.sql
 │── template_library.sql
@@ -162,72 +150,61 @@ CLI-TOOL/
 
 ---
 
-## 💡 Recommended Workflow for Hackathon Demo
+## 💡 Recommended Workflow for Hackathon Demo  
 
-1. Launch QuickDB:
-
+1. Launch QuickDB:  
 ```bash
-./dbcli quickdb
+./dbmaster quickdb
 ```
 
-2. Load a template DB (e.g., E-commerce):
-
+2. Load template DB (e.g., E-commerce):  
 ```bash
-./dbcli template ecom
+./dbmaster template ecom
 ```
 
-3. Seed some sample data:
-
+3. Seed some sample data:  
 ```bash
-./dbcli quickseed --rows=20
+./dbmaster quickseed --rows=20
 ```
 
-4. Visualize ER diagram:
-
+4. Visualize ER diagram:  
 ```bash
-./dbcli visualize
+./dbmaster visualize
 ```
 
-5. Export tables:
-
+5. Export tables:  
 ```bash
-./dbcli export users csv users.csv
-./dbcli export orders json orders.json
+./dbmaster export users csv users.csv
+./dbmaster export orders json orders.json
 ```
 
-6. Launch the mini dashboard:
-
+6. Launch dashboard:  
 ```bash
-./dbcli dashboard
+./dbmaster dashboard
 ```
 
-7. Combined export:
-
+7. Export package:  
 ```bash
-./dbcli package
+./dbmaster package
 ```
 
 ---
 
-## 📸 Media (Screenshots & Video Demo)
+## 📸 Media (Screenshots & Video Demo)  
 
-**Screenshots:**
+**Screenshots:**  
+* [ ] QuickDB running  
+* [ ] ER diagram `schema.png`  
+* [ ] CSV/Excel export results  
 
-* [ ] Add screenshot of QuickDB running
-* [ ] Add screenshot of ER diagram `schema.png`
-* [ ] Add screenshot of CSV/Excel export
-
-**Video Demo:**
-
-* [ ] Add link or embed video showing end-to-end demo in Codespaces
+**Video Demo:**  
+* [ ] Add link to Codespaces demo video  
 
 ---
 
-## 👥 Team Information
+## 👥 Team Information  
 
-| Name | Role | Contact |
-| ---- | ---- | ------- |
-|      |      |         |
-|      |      |         |
-|      |      |         |
-
+| Name              | GitHub |  
+| ----------------- | ---------------------------- |  
+| Shubham Chaudhary | [shubhamchaudhary-dev](https://github.com/shubhamchaudhary-dev) |  
+| Jeewant Balyan    | [jeewant-balyan](https://github.com/jeewant-balyan) |  
