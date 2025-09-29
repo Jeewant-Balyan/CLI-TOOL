@@ -192,15 +192,58 @@ CLI-TOOL/
 
 ## 📸 Media (Screenshots & Video Demo)  
 
-**Screenshots:**  
-* [ ] QuickDB running  
-* [ ] ER diagram `schema.png`  
-* [ ] CSV/Excel export results  
-
 **Video Demo:**  
 * [ ] Add link to Codespaces demo video  
 
+**Screenshots:**  
+![WhatsApp Image 2025-09-29 at 22 51 14_98cf30f0](https://github.com/user-attachments/assets/6e36bc5d-e546-415e-8593-0723d6f87f69)
+
 ---
+
+## 🖥️ Setup on Local Windows Machine  
+
+### 1. Install Dependencies  
+
+1. **Install Go:**  
+   Download from [https://go.dev/dl/](https://go.dev/dl/) and follow installer instructions.  
+2. **Install SQLite:**  
+   Download from [https://sqlite.org/download.html](https://sqlite.org/download.html) and add to PATH.  
+3. **Install Graphviz:**  
+   Download from [https://graphviz.org/download/](https://graphviz.org/download/) and add to PATH.  
+4. **Optional: Excel export dependency**  
+   Open PowerShell or terminal and run:  
+   ```powershell
+   go install github.com/xuri/excelize/v2@latest
+   ```  
+
+### 2. Open Terminal  
+
+Open **PowerShell** or **Command Prompt** in the project folder where `main.go` exists.  
+
+### 3. Build DBMASTER  
+
+```powershell
+# Build the Go project
+go build -o dbmaster.exe main.go
+```
+
+If you get a permission issue, you can run as Administrator.  
+
+### 4. Run DBMASTER  
+
+```powershell
+.\dbmaster.exe quickdb
+```
+
+Other commands are the same as Codespaces:  
+
+```powershell
+.\dbmaster.exe visualize
+.\dbmaster.exe export users csv users.csv
+.\dbmaster.exe dashboard
+```  
+
+> 💡 Tip: Use `.\dbmaster.exe` instead of `./dbmaster` on Windows.
 
 ## 👥 Team Information  
 
