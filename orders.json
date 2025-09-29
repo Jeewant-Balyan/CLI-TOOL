@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "total": 171,
+    "user_id": 1
+  },
+  {
+    "id": 2,
+    "total": 119,
+    "user_id": 2
+  },
+  {
+    "id": 3,
+    "total": 499,
+    "user_id": 3
+  },
+  {
+    "id": 4,
+    "total": 109,
+    "user_id": 4
+  },
+  {
+    "id": 5,
+    "total": 111,
+    "user_id": 5
+  }
+]

@@ -1,0 +1,9 @@
+digraph G {
+node [shape=box style=filled fillcolor=lightblue];
+"products" [label="products\nid:INTEGER\nname:TEXT\nprice:INTEGER\n"];
+"customers" [label="customers\nid:INTEGER\nname:TEXT\nemail:TEXT\n"];
+"students" [label="students\nid:INTEGER\nname:TEXT\ngrade:TEXT\n"];
+"teachers" [label="teachers\nid:INTEGER\nname:TEXT\nsubject:TEXT\n"];
+"users" [label="users\nid:INTEGER\nname:TEXT\nemail:TEXT\n"];
+"orders" [label="orders\nid:INTEGER\nuser_id:INTEGER\ntotal:INTEGER\n"];
+}
