@@ -21,6 +21,7 @@ DBCLI is a **Command Line Interface tool** designed for students, startups, and 
 ## 🛠️ Setup in GitHub Codespaces
 
 ### 1. Open in Codespaces
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Jeewant-Balyan/CLI-TOOL)
 
 Click the badge above to launch your project in **GitHub Codespaces**.
 
